@@ -1,0 +1,30 @@
+<%-include("partials/header"); -%>
+<div class="re">
+  <h1>RECIEPES</h1>
+  <hr />
+  <div class="alert alert-dismissible alert-info">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>This page contains your reciepes</strong>
+  </div>
+  <% posts.forEach(function(post){ %>
+  <small><i class="modify">created on:<%= post.created_at %></i></small>
+  <div class="post1">
+    <img class="upload img-fluid img-thumbnail" src="/<%=post.imageurl%>" alt="image unavailable">
+    <h1 class="head"><%=post.title.toUpperCase()%></h1>
+    <% if (post.content.length>100) {%>
+    <p class="post">->
+      <%=post.content.substring(0,99)%>
+      <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+    <p class="author">BY-<%=post.author%></p>
+    <%} else {%>
+    <p class="post">->
+      <%=post.content%>
+    </p>
+    <p class="author">BY-<%=post.author%></p>
+    <%} %>
+    <hr />
+    <% }) %>
+  </div>
+  <%-include("partials/footer"); -%>
+</div>

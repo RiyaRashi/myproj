@@ -1,0 +1,12 @@
+<%-include("partials/header"); -%>
+<div class="po">
+  <h1>Feedbacks</h1>
+  <hr />
+  <% feeds.forEach(function(feed){ %>
+  <p>
+    <%= feed.content %></p>
+  <p class="author">BY-<%=feed.author%></p>
+  <hr />
+  <% }) %>
+  <%-include("partials/footer"); -%>
+</div>

@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<div class="reg">
+  <center>
+    <i class="fas fa-key fa-5x" aria-hidden="true"></i>
+    <h1>Register</h1>
+  </center>
+  <% if (message1){ %>
+  <h4 class=" alert alert-danger "> <%= message1 %></h4>
+
+  <% } %>
+  <hr>
+  <center>
+    <b>
+      <p class="lead">Don't keep your reciepes , share them with us!</p>
+    </b>
+  </center>
+  <hr />
+  <!--form-->
+  <%- include('partials/registerform') %>
+  <br />
+  <center>
+    <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+      </div>
+    </div>
+    <Br><br />
+  </center>
+  <%- include('partials/footer') %>
+</div>

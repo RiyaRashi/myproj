@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+<div class="combo">
+  <h1>Compose</h1>
+  <% if (message1){ %>
+  <h4 class=" alert alert-danger "> <%= message1 %></h4>
+  <% } %>
+
+  <form action="make" method="post" enctype="multipart/form-data">
+    <i>You can compose your reciepes here!!!</i>
+    <%=moment%>
+    <br />
+    <div>
+      <label>TITLE</label><br />
+      <input class="form-control" type="text" name="postTitle" placeholder="title" required><br />
+      <label>POST</label>
+      <textarea class="form-control" name="postBody" placeholder="write here.." rows="5" cols="30" required></textarea>
+      <br />
+      <br />
+      <label>AUTHOR</label>
+      <input class="form-control" type="text" name="postAuthor" placeholder="author" required>
+      <input type="file" name="image" placeholder="file" id="image">
+    </div>
+    <br />
+    <br />
+    <center>
+      <button class="btn btn-success btn-lg" type="submit" name="button"> <i class="fa fa-check" aria-hidden="true" required></i> Publish</button><br /><br />
+    </center>
+  </form>
+  <%- include("partials/footer"); -%>
+</div>

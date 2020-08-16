@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+<div class='po'>
+  <u>
+    <h1 class='head'><%=title.toUpperCase()%></h1>
+  </u>
+  <img class=" upload1 img-fluid img-thumbnail" src="/<%=imageurl%>" alt="image unavailable">
+  <p>
+    <i>by- <%=author%></i>
+  </p>
+  <p class='post'><%=content%></p>
+  <br />
+  <%- include("partials/footer"); -%>
+</div>

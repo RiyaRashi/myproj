@@ -1,0 +1,29 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Welcome Letter</h5>
+        <button type="button" class="close" id="crosses" data-dismiss="modal" aria-label="Close">
+          <span class='cross' aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Hello user,welcome to our website.Have a great day.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thanks</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    if (sessionStorage.getItem('#exampleModalCenter') !== 'true') {
+      setTimeout(function() {
+        $('#exampleModalCenter').modal('show')
+      }, 2000);
+      sessionStorage.setItem('#exampleModalCenter', 'true');
+    }
+});
+</script>

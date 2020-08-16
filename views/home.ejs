@@ -1,0 +1,25 @@
+<%- include("partials/header"); -%>
+<div class="ho">
+  <% if (message){ %>
+  <p class="alert alert-success "> <%= message %></p>
+  <!--mine for text color to be black created by me-->
+  <% } %>
+  <CENTER>
+    <h1 class="headfirst">WELCOME TO THE FOODIE WORLD </h1>
+  </CENTER>
+  <!--collapse-->
+  <%- include("partials/collapse"); -%>
+  <!-- IAMGE-->
+  <%- include("partials/image"); -%>
+  <h1><%= homecontent %></h1>
+  <!-- Modal -->
+  <%- include("partials/modal"); -%>
+  <!--BUTTONS-->
+  <%- include('partials/homebutton');%>
+  <!--TESTIMONIAL SECTION-->
+  <%- include("partials/testimonial"); -%>
+  <!--CAROUSEL-->
+  <%- include("partials/carousel"); -%>
+  <!--FOOTER-->
+  <%- include("partials/footer"); -%>
+</div>

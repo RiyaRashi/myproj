@@ -1,0 +1,24 @@
+<%- include("partials/header"); -%>
+<div class="feeed">
+  <h1>Compose</h1>
+  <h1>FEEDBACK</h1>
+  <%=moment%>
+  <hr />
+  <center>
+    <form action="make1" method="post">
+      <div class="form-group">
+        <img class="comp" src="css\face.png" align="right" />
+        <i>
+          <h4>COMMENT</h4>
+        </i>
+        <textarea id="feed1" name="feedbody" placeholder="write your views" rows="20" cols="30" required></textarea>
+        <br /><br><i>
+          <h4></h4>AUTHOR</h4>
+        </i><br />
+        <input id="feed1" type="text" name="postAuthor" placeholder="author" required>
+      </div>
+      <button class="btn btn-success btn-lg" type="submit" name="button"><i class="fa fa-check" aria-hidden="true"></i> done</button><br /><br />
+    </form>
+  </center>
+  <%- include("partials/footer"); -%>
+</div>
