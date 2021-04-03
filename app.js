@@ -15,10 +15,10 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const homecontent = "WELCOME guys,have a good experience......";
-const aboutcontent = "HERE we use to post receiepes of different varieties of foods.helpful for alll age groups who are interested in cooking ";
+const aboutcontent = "HERE we use to post recipes of different varieties of foods.helpful for alll age groups who are interested in cooking ";
 const contactcontent = "A warm welcome to you.For further details you can contact to our chefs on the following mail addresses:abc@gmail.com,wert@gmail.com.For further details cal on:XXXXXXXXXX";
 
-
+const { check, validationResult } = require('express-validator')
 const app = express();
 app.use(cookieParser('secret'));
 app.use(express.static("public"));
@@ -28,6 +28,7 @@ app.set('views', 'views'); ///data pass krne ke liye
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 
 app.use(session({
   secret: "our lil secret.",
@@ -231,38 +232,42 @@ app.post("/forward", function(req, res) {
   res.redirect("/compose");
 });
 app.post("/register1", function(req, res) {
+
   const username = req.body.username;
   const pw = req.body.password;
   User.register({
     username: req.body.username
   }, req.body.password, function(err, user) {
 
-    if (pw.length === 0 || username.length === 0) {
-      console.log(err);
-      req.flash('error', 'Empty!!please fill the details.');
-      //req.flash(err);
-      res.redirect("/register");
-    } else if (err) {
+
+    // if (pw.length === 0 || username.length === 0) {
+    //   console.log(err);
+    //   req.flash('error', 'Empty!!please fill the details.');
+    //   //req.flash(err);
+    //   res.redirect("/register");
+    // } else 
+    if (err) {
       console.log(err);
 
       req.flash('error', 'User is already registered');
-      res.redirect("/register");
-    } else if (username.length > 20 || pw.length > 15) {
-      console.log('too long');
-      req.flash('error', 'User or password too long. ');
-      //req.flash(err);
-      res.redirect("/register");
-    } else if (pw.length > 0 && pw.length < 4) {
-      console.log('less');
+      res.redirect("/register");}
+    // } else if (username.length > 20 || pw.length > 15) {
+    //   console.log('too long');
+    //   req.flash('error', 'User or password too long. ');
+    //   //req.flash(err);
+    //   res.redirect("/register");
+    // } else if (pw.length > 0 && pw.length < 4) {
+    //   console.log('less');
 
-      req.flash('error', 'size of password must be more than 4');
-      res.redirect("/register");
-    } else if (pw.includes('@') === false && pw.includes('#') === false && pw.includes('*') === false && pw.includes('$') === false) {
-      console.log('special chars missing');
+    //   req.flash('error', 'size of password must be more than 4');
+    //   res.redirect("/register");
+    // } else if (pw.includes('@') === false && pw.includes('#') === false && pw.includes('*') === false && pw.includes('$') === false) {
+    //   console.log('special chars missing');
 
-      req.flash('error', 'must include any of the following @,#,*,$');
-      res.redirect("/register");
-    } else {
+    //   req.flash('error', 'must include any of the following @,#,*,$');
+    //   res.redirect("/register");
+    // }
+    else {
       passport.authenticate("local")(req, res, function() {
         req.flash('success', 'Welcome,you are registered');
         console.log(' successfully registered');

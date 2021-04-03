@@ -118,19 +118,21 @@ input {
 /* .footer{
    padding-top:10%;
 } */
-footer{
-
+footer.footer{
+height: 100%;
 text-align:center;
 background: #444444;
-font-family: 'Open Sans', sans-serif;
-  color: #FFFFFF;
-/* position: relative; */
-margin-bottom: 0;
-padding: 5%;
-
-margin-top:auto;
+position: relative;
 
 }
+footer.footer.container{
+  display: flex;
+  /* grid-template-columns: 25%  25% 25% 25%;
+flex-grow: 1;
+flex-basis: 0;
+padding: 3em,0.9em; */
+}
+
 
 .fa{
 padding-top:5%;

@@ -1,10 +1,11 @@
 <form action="register1" method="POST">
   <center>
     <label for="email">Email</label><br />
-    <input type="email" name="username">
+    <input type="email" name="username" required>
     <div class="form-group">
-      <label for="password">Password</label><br />
-      <input type="password" name="password">
+      <label for="password" >Password</label><br />
+      <input type="password" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[@$!%*?&])(?=.*[A-Z]).{6,}"
+      title="Must contain at least one  number one uppercase ,one lowercase letter,one special character and at least 6 or more characters" required>
     </div>
     <button class="btn btn-primary new" type="submit" name="button">
       <i class="fa fa-user " aria-hidden="true"></i>register</button>
